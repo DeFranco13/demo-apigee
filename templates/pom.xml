@@ -144,7 +144,7 @@
 			</plugin>
  -->
 			<!-- Maven config plugin -->
-			<plugin>
+<!-- 			<plugin>
 			    <groupId>com.apigee.edge.config</groupId>
 			    <artifactId>apigee-config-maven-plugin</artifactId>
 			    <version>${apigee.config.version}</version>
@@ -171,7 +171,7 @@
                    			</goals>
                     	</execution>
 			    	</executions>
-			</plugin> 
+			</plugin>  -->
 
 			<!-- Maven deploy plugin -->
 			<plugin>
