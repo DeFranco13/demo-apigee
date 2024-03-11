@@ -1,33 +1,21 @@
 pipeline {
     agent any
+    environment {
+        // Define the Maven installation name
+        MAVEN_HOME = tool name: 'Maven', type: 'maven'
+    }
     stages {
+         stage('Checkout') {
+            steps {
+                // Checkout your source code from version control
+                git 'https://github.com/DeFranco13/demo-apigee'
+            }
+        }
         stage('Build') {
             steps {
-                // Your build steps here
-                sh 'echo "Building..."'
+                // Use the installed Maven to execute Maven commands
+                sh "${MAVEN_HOME}/bin/mvn clean install"
             }
-        }
-        stage('Test') {
-            steps {
-                // Your test steps here
-                sh 'echo "Testing..."'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Your deployment steps here
-                sh 'echo "Deploying..."'
-            }
-        }
-    }
-    post {
-        success {
-            // Actions to take if pipeline succeeds
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            // Actions to take if pipeline fails
-            echo 'Pipeline failed!'
         }
     }
 }
