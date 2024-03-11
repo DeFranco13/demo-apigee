@@ -16,8 +16,7 @@ pipeline {
         }
         stage('Deploy Apigee Proxy') {
             steps {
-                sh "cd templates && cat pom.xml"
-                //sh "mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Denv=default-dev"
+                sh "cd templates && mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Denv=default-dev"
             }
         }
     }
