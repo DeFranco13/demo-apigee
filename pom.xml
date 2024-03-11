@@ -65,12 +65,12 @@
 				<plugin>
 					<groupId>io.apigee.build-tools.enterprise4g</groupId>
 					<artifactId>apigee-edge-maven-plugin</artifactId>
-					<version>${apigee.deploy.version}</version>
+					<version>2.x</version>
 				</plugin>
 				<plugin>
 					<groupId>com.apigee.edge.config</groupId>
 					<artifactId>apigee-config-maven-plugin</artifactId>
-					<version>${apigee.config.version}</version>
+					<version>2.x</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -177,7 +177,7 @@
 			<plugin>
 				<groupId>io.apigee.build-tools.enterprise4g</groupId>
 				<artifactId>apigee-edge-maven-plugin</artifactId>
-				<version>${apigee.deploy.version}</version>
+				<version>2.x</version>
 				<executions>
 					<execution>
 						<id>configure-bundle-step</id>
