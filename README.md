@@ -28,11 +28,12 @@ In general instellen voeg je de link van deze repo toe: https://github.com/DeFra
 
 
 Momenteel is deze op public gezet voor het toegankelijk te maken voor de Jenkins api, deze kan worden ingesteld met een password / key in nabije toekomst.
+Onder pipeline kies je voor: "Pipeline script from SCM". In de repo link voor je opnieuw de github link to. Momenteel in credentials nog niets toevoegen, dit volgt nog.
 
 ![image](https://github.com/DeFranco13/demo-apigee/assets/75678058/52f7dfe5-934e-4f77-aef4-304664d2fe43)
 
 
-Onder pipeline kies je voor: "Pipeline script from SCM". In de repo link voor je opnieuw de github link to. Momenteel in credentials nog niets toevoegen, dit volgt nog.
+
 
 ## Gebruik Jenkins
 
