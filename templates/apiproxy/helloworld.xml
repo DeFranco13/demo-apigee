@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="helloworld">
+  <DisplayName/>
+  <Description>helloworld proxy for provisioning flow</Description>
+  <CreatedAt>1694700052153</CreatedAt>
+  <LastModifiedAt>1694700052153</LastModifiedAt>
+  <BasePaths>/helloworld</BasePaths>
+  <Policies>
+    <Policy>add-cors</Policy>
+    <Policy>ResponsePayload</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+</APIProxy>
