@@ -7,7 +7,7 @@ pipeline {
          stage('Clone Github') {
             steps {
                 // Checkout your source code from version control
-                git 'https://github.com/DeFranco13/demo-apigee'
+                git clone 'https://github.com/DeFranco13/demo-apigee'
             }
         }
         stage('Maven check'){
