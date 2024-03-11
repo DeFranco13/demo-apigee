@@ -8,6 +8,11 @@ pipeline {
                 git 'https://github.com/DeFranco13/demo-apigee'
             }
         }
+        stage('Maven check'){
+            steps {
+                sh "mvn -v"
+            }
+        }
         stage('Deploy Apigee Proxy') {
             steps {
                 
