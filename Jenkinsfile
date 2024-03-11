@@ -8,6 +8,11 @@ pipeline {
                 git 'https://github.com/DeFranco13/demo-apigee'
             }
         }
+        stage('Maven install'){
+            steps {
+                sh "apt install -y maven"
+            }
+        }
         stage('Maven check'){
             steps {
                 sh "mvn -v"
