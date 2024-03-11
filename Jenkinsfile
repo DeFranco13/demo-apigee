@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    // environment {}
+    environment {
+        GOOGLE_TOKEN=""
+    }
     stages {
          stage('Clone Github') {
             steps {
@@ -17,7 +19,7 @@ pipeline {
             steps {
                 
                 // Deploy the Apigee proxy using the Apigee Maven plugin
-                sh "cd templates && ${MAVEN_HOME}/bin/mvn apigee-enterprise:deployProxy -Dorg=${org} -Denv=${env} -Dusername=${username} -Dpassword=${password} -Doptions=none"
+                sh "cd templates && ${MAVEN_HOME}/bin/mvn apigee-enterprise:deployProxy -Dorg=i8c-apigee-2 -Dtoken=$(GOOGLE_TOKEN) -Denv=default-dev"
             }
         }
     }
