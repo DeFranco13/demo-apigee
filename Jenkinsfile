@@ -1,20 +1,25 @@
 pipeline {
     agent any
     environment {
-        // Define the Maven installation name
-        MAVEN_HOME = tool name: 'Maven', type: 'maven'
+        
     }
     stages {
-         stage('Checkout') {
+         stage('Clone Github') {
             steps {
                 // Checkout your source code from version control
                 git 'https://github.com/DeFranco13/demo-apigee'
             }
         }
-        stage('Build') {
+        stage('Maven install') {
             steps {
-                // Use the installed Maven to execute Maven commands
-                sh "${MAVEN_HOME}/bin/mvn clean install"
+                
+            }
+        }
+        stage('Deploy Apigee Proxy') {
+            steps {
+                
+                // Deploy the Apigee proxy using the Apigee Maven plugin
+                sh "cd templates && ${MAVEN_HOME}/bin/mvn apigee-enterprise:deployProxy -Dorg=${org} -Denv=${env} -Dusername=${username} -Dpassword=${password} -Doptions=none"
             }
         }
     }
