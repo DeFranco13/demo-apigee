@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>apigee-i8c</groupId>
+		<artifactId>TestProxy</artifactId>
+		<version>v1</version>
+		<relativePath/>
+	</parent>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>apigee-i8c</groupId>
+	<!-- the name of the artifact that will be created -->
+	<artifactId>TestProxy</artifactId>
+	<version>1.0.0</version>
+	<!-- the name of the object (API proxy) in Apigee that will be created -->
+	<name>TestProxy</name>
+	<packaging>pom</packaging>
+
+</project>
