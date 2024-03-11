@@ -19,7 +19,7 @@ pipeline {
             steps {
                 
                 // Deploy the Apigee proxy using the Apigee Maven plugin
-                sh "cd templates && mvn apigee-enterprise:deployProxy -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Denv=default-dev"
+                sh "cd templates/apiproxy && mvn apigee-enterprise:deployProxy -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Denv=default-dev"
             }
         }
     }
