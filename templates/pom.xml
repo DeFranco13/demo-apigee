@@ -53,7 +53,7 @@
 				<apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
 				<apigee.bearer>${token}</apigee.bearer> <!-- this takes precedence over service account file -->
 				<apigee.serviceaccount.file>${sa}</apigee.serviceaccount.file>
-<!-- 				<apigee.config.dir>./resources/edge</apigee.config.dir> <!-- For config plugin -->
+<!-- 				<apigee.config.dir>./resources/edge</apigee.config.dir> For config plugin -->
 				<apigee.config.options>update</apigee.config.options> <!-- For config plugin -->
 			</properties>
 		</profile>
