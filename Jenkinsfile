@@ -16,7 +16,8 @@ pipeline {
         }
         stage('Deploy Apigee Proxy') {
             steps {
-                sh "cd templates && mvn package -Dname=TestProxy -Denv=default-dev && mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Dname=TestProxy -Denv=default-dev"
+                
+                sh "mvn package -Dname=TestProxy -Denv=default-dev && mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Dname=TestProxy -Denv=default-dev"
             }
         }
     }
