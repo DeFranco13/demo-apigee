@@ -14,11 +14,11 @@ pipeline {
                 sh "mvn -v"
             }
         }
-        stage('Make Package env'){
-            steps{
-                sh "mkdir -p /var/jenkins_home/workspace/Demo/target"
-            }
-        }
+        //stage('Make Package env'){
+        //    steps{
+        //        sh "mkdir -p /var/jenkins_home/workspace/Demo/target"
+        //    }
+        //}
         stage('Package proxy'){
             steps{
                 sh "mvn package -Dname=TestProxy -Denv=default-dev"
