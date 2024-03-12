@@ -189,7 +189,11 @@
 				<artifactId>apigee-edge-maven-plugin</artifactId>
 				<version>2.4.0</version>
 				<executions>
-					
+					<!--
+					Zonder configure in te stellen zal de target folder leeg zijn
+					en zal er dus een error komen dat de file niet bestaat.
+					Met config is de file leeg..
+					-->
 					<execution>
 						<id>configure-bundle-step</id>
 						<phase>package</phase>
