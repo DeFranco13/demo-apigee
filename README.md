@@ -44,3 +44,5 @@ Onder pipeline kies je voor: "Pipeline script from SCM". In de repo link voor je
 
 Build now voor de Jenkins te starten.
 
+Output is zichtbaar met elke stage en zijn status. 
+
