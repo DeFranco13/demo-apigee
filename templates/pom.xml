@@ -22,6 +22,6 @@
 	<version>1.0.0</version>
 	<!-- the name of the object (API proxy) in Apigee that will be created -->
 	<name>TestProxy</name>
-	<packaging>pom</packaging>
+	<packaging>apiproxy</packaging>
 
 </project>
