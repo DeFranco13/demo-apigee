@@ -24,6 +24,8 @@ Deze zal jenkins installeren en builden, tijdens eht build process krijg je een 
 
 ## Configuratie Jenkins
 
+De pipeline naam ***moet*** "Demo" zijn, deze staat momenteel hardcoded in het aanmaken voor de target directory. Deze kan later aangepast worden.
+
 Na het inloggen met de access key kies je vervolgens om verder te gaan als admin, je maakt dus geen user aan. Vervolgens ga je een nieuwe pipeline ontwikkelen.
 In general instellen voeg je de link van deze repo toe: https://github.com/DeFranco13/demo-apigee .
 
