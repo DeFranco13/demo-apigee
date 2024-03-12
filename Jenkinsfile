@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Apigee maven install'){
             steps {
-                sh "mvn install -Ptest -Denv=default-dev -Dapigee.config.options=create"
+                sh "mvn install -Denv=default-dev -Dapigee.config.options=create"
             }
         }
         stage('Package proxy'){
