@@ -19,11 +19,6 @@ pipeline {
                 sh "mkdir -p /var/jenkins_home/workspace/Demo/target"
             }
         }
-        stage('Apigee maven install'){
-            steps {
-                sh "mvn install -Denv=default-dev -Dapigee.config.options=create"
-            }
-        }
         stage('Package proxy'){
             steps{
                 sh "mvn package -Dname=TestProxy -Denv=default-dev"
