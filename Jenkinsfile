@@ -14,10 +14,19 @@ pipeline {
                 sh "mvn -v"
             }
         }
+        stage('Make Package env'){
+            steps{
+                sh "mkdir /var/jenkins_home/workspace/Demo/target"
+            }
+        }
+        stage('Package proxy'){
+            steps{
+                sh "mv package -Dname=TestProxy -Denv=default-dev"
+            }
+        }
         stage('Deploy Apigee Proxy') {
             steps {
-                
-                sh "mvn package -Dname=TestProxy -Denv=default-dev && mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Dname=TestProxy -Denv=default-dev"
+                sh "mvn apigee-enterprise:deploy -Pgoogleapi -Dorg=i8c-apigee-2 -Dtoken=${GOOGLE_TOKEN} -Dname=TestProxy -Denv=default-dev"
             }
         }
     }
