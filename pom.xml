@@ -154,7 +154,7 @@
 			<plugin>
 			    <groupId>com.apigee.edge.config</groupId>
 			    <artifactId>apigee-config-maven-plugin</artifactId>
-			    <version>${apigee.config.version}</version>
+			    <version>2.4.0</version>
 			    <executions>
 			        	<execution>
 			            	<id>create-config-kvm</id>
