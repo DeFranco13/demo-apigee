@@ -6,16 +6,19 @@
 
 In de dockerfile config:
 
-FROM jenkins/jenkins:lts
-USER root
-RUN apt-get update && apt-get install -y maven
-USER jenkins
+- FROM jenkins/jenkins:lts
+- USER root
+- RUN apt-get update && apt-get install -y maven
+- USER jenkins
 
 
 ### Dockerfile build
 
-Voer het volgende commando uit voor de dockerfile te builden:   docker build -t jenkins-maven . 
-Voer het volgende commando uit voor container te starten:   docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins-maven 
+Voer het volgende commando uit voor de dockerfile te builden:   
+- ***docker build -t jenkins-maven .*** ( . op einde moet mee in command)
+  
+Voer het volgende commando uit voor container te starten:
+- ***docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins-maven***
 
 Deze zal jenkins installeren en builden, tijdens eht build process krijg je een personal admin access key voor als admin in te loggen.
 
