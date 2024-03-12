@@ -170,13 +170,15 @@
 			                	<goal>targetservers</goal>
 			            	</goals>
 			        	</execution>
+				    <!--
 			        	<execution>
                         		<id>create-config-cache</id>
                         		<phase>package</phase>                        
                         		<goals>
                             		<goal>caches</goal>
                    			</goals>
-                    	</execution>
+                    			</execution>
+				    -->
 			    	</executions>
 			</plugin>
 
