@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Make Package env'){
             steps{
-                sh "mkdir /var/jenkins_home/workspace/Demo/target"
+                sh "mkdir -p /var/jenkins_home/workspace/Demo/target"
             }
         }
         stage('Package proxy'){
             steps{
-                sh "mv package -Dname=TestProxy -Denv=default-dev"
+                sh "mvn package -Dname=TestProxy -Denv=default-dev"
             }
         }
         stage('Deploy Apigee Proxy') {
