@@ -99,7 +99,7 @@
 			<!-- Maven config plugin -->
 			<plugin>
 			    <groupId>com.apigee.edge.config</groupId>
-			    <artifactId>apigee-config-maven-plugin</artifactId>
+			    <artifactId>apigee-config-maven-plugin-1</artifactId>
 			    <version>2.4.0</version>
 			    <executions>
 			        	<execution>
@@ -132,7 +132,7 @@
 			
 			<plugin>
 				<groupId>io.apigee.build-tools.enterprise4g</groupId>
-				<artifactId>apigee-edge-maven-plugin</artifactId>
+				<artifactId>apigee-edge-maven-plugin-2</artifactId>
 				<version>1.1.7</version>
 				<executions>
 					<!--
