@@ -19,6 +19,11 @@ pipeline {
                 sh "mkdir -p /var/jenkins_home/workspace/Demo/target"
             }
         }
+        stage('Install'){
+            steps{
+                sh "mvn install -Papigee -Dapigee.config.options=create"
+            }
+        }
         stage('Package proxy'){
             steps{
                 sh "mvn package -Dname=TestProxy -Denv=default-dev"
