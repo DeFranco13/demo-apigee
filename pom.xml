@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee-i8c</groupId>
 	<!-- the name of the artifact that will be created -->
-	<artifactId>testproxy</artifactId>
-	<version>v1</version>
+	<artifactId>parent-pom</artifactId>
+	<version>1.0</version>
 	<!-- the name of the object (API proxy) in Apigee that will be created -->
 	<name>TestProxy</name>
 	<packaging>pom</packaging>
@@ -14,76 +14,29 @@
 			<name>Maven Plugin Repository</name>
 			<url>https://repo.maven.apache.org/maven2</url>
 			<layout>default</layout>
-		</pluginRepository>
-	</pluginRepositories>
-	<repositories>
-		<repository>
-			<id>central</id>
-			<name>Central Repository</name>
-			<url>https://repo.maven.apache.org/maven2</url>
-			<layout>default</layout>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
-	</repositories>
+			<releases>
+                		<updatePolicy>never</updatePolicy>
+            		</releases>			
+		</pluginRepository>
+	</pluginRepositories>
 	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<org.slf4j.simpleLogger.defaultLogLevel>info</org.slf4j.simpleLogger.defaultLogLevel>
-		<project.root.dir>${basedir}</project.root.dir>
-		<target.root.dir>${basedir}/target</target.root.dir>
-		<deployment.suffix></deployment.suffix>
-		<apigee.options>override</apigee.options>
-		<apigee.apiversion>v1</apigee.apiversion>
-		<apigee.org>${org}</apigee.org>
-		<apigee.env>${env}</apigee.env>
-		<deployment.description>n/a</deployment.description>
-	</properties>
-	<dependencies>
-		<dependency>
-	    		<groupId>io.apigee.build-tools.enterprise4g</groupId>
-	    		<artifactId>apigee-edge-maven-plugin</artifactId>
-	    		<version>2.4.0</version>
-		</dependency>
-	</dependencies>
-	<profiles>
-		
-		<profile>
-			<!-- Apigee X and hybrid -->
-			<id>googleapi</id>
-			<properties>
-				<apigee.deploy.plugin.version>2.3.1</apigee.deploy.plugin.version>
-				<apigee.config.plugin.version>2.5.1</apigee.config.plugin.version>
-				<apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
-				<apigee.bearer>${token}</apigee.bearer> <!-- this takes precedence over service account file -->
-				<apigee.serviceaccount.file>${sa}</apigee.serviceaccount.file>
-<!-- 				<apigee.config.dir>./resources/edge</apigee.config.dir> For config plugin -->
-				<apigee.config.version>2.4.0</apigee.config.version>
-				<apigee.config.options>update</apigee.config.options> <!-- For config plugin -->
-			</properties>
-		</profile>
-	</profiles>
-
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>io.apigee.build-tools.enterprise4g</groupId>
-					<artifactId>apigee-edge-maven-plugin</artifactId>
-					<version>2.4.0</version>
-				</plugin>
-				<plugin>
-					<groupId>com.apigee.edge.config</groupId>
-					<artifactId>apigee-config-maven-plugin</artifactId>
-					<version>2.4.0</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
 		<plugins>
-
+			<plugin>
+				<groupId>io.apigee.build-tools.enterprise4g</groupId>
+				<artifactId>apigee-edge-maven-plugin</artifactId>
+				<version>2.4.0</version>
+			</plugin>
+			<plugin>
+				<groupId>com.apigee.edge.config</groupId>
+				<artifactId>apigee-config-maven-plugin</artifactId>
+				<version>2.4.0</version>
+			</plugin>
+		</plugins>
+		<plugins>
 			<!-- copy the full apiproxy folder to target folder -->
  			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -97,15 +50,10 @@
 						</goals>
 						<configuration>
 							<overwrite>true</overwrite>
+							<outputDirectory>${basedir}/target/apiproxy</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.root.dir}</directory>
-									<filtering>true</filtering>
-									<includes>
-										<include>apiproxy/**</include>
-									<include>test/integration/**</include>
-										<include>resources/**</include> 
-									</includes>
+									<directory>apiproxy</directory>
 								</resource>
 							</resources>
 							<outputDirectory>${target.root.dir}</outputDirectory>
@@ -230,5 +178,40 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<org.slf4j.simpleLogger.defaultLogLevel>info</org.slf4j.simpleLogger.defaultLogLevel>
+		<project.root.dir>${basedir}</project.root.dir>
+		<target.root.dir>${basedir}/target</target.root.dir>
+		<deployment.suffix></deployment.suffix>
+		<apigee.options>override</apigee.options>
+		<apigee.apiversion>v1</apigee.apiversion>
+		<apigee.org>${org}</apigee.org>
+		<apigee.env>${env}</apigee.env>
+		<deployment.description>n/a</deployment.description>
+	</properties>
+	<dependencies>
+		<dependency>
+	    		<groupId>io.apigee.build-tools.enterprise4g</groupId>
+	    		<artifactId>apigee-edge-maven-plugin</artifactId>
+	    		<version>2.4.0</version>
+		</dependency>
+	</dependencies>
+	<profiles>
+		<profile>
+			<!-- Apigee X and hybrid -->
+			<id>googleapi</id>
+			<properties>
+				<apigee.deploy.plugin.version>2.3.1</apigee.deploy.plugin.version>
+				<apigee.config.plugin.version>2.5.1</apigee.config.plugin.version>
+				<apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+				<apigee.bearer>${token}</apigee.bearer> <!-- this takes precedence over service account file -->
+				<apigee.serviceaccount.file>${sa}</apigee.serviceaccount.file>
+<!-- 				<apigee.config.dir>./resources/edge</apigee.config.dir> For config plugin -->
+				<apigee.config.version>2.4.0</apigee.config.version>
+				<apigee.config.options>update</apigee.config.options> <!-- For config plugin -->
+			</properties>
+		</profile>
+	</profiles>
 </project>
