@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Install'){
             steps{
-                sh "mvn install -Papigee -Dapigee.config.options=create"
+                sh "mvn install -Pgoogleapi -Dapigee.config.options=create"
             }
         }
         stage('Package proxy'){
