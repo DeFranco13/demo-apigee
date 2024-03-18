@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move directory'){
             steps{
-                sh "mvn -f Mock-v1/pom.xml"
+                sh "mvn -f Mock-v1/pom.xml install"
             }
         }
         stage('Package'){
