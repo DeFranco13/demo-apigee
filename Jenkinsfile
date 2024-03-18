@@ -12,14 +12,6 @@ pipeline {
                 sh "mvn -v"
             }
         }
-        stage('Token Gen'){
-             steps {
-                 sh "sudo apt install nodejs" 
-                 sh "npm install totp-generator"
-                 sh "EXPORT token_gen=(node Mock-v1/mfstoken.js)"
-                 sh "cat token_gen"
-             }   
-        }
         stage('Package'){
             steps{
                 sh "mvn -f Mock-v1/pom.xml package -P test "
