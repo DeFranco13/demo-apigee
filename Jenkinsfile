@@ -19,6 +19,20 @@ pipeline {
         }
         stage('Install'){
             steps{
+                /*
+                
+                Credentials
+                
+                node {
+                    withCredentials([
+                        usernamePassword(credentialsId: 'nexus-creds',usernameVariable: 'NEXUS_USERNAME',passwordVariable: 'NEXUS_PASSWORD')
+                                    ]) 
+                        {
+                        echo 'My credentials: $NEXUS_USERNAME:$NEXUS_PASSWORD'
+                        }
+                    }
+                */
+                
                 sh "mvn -f Mock-v1/pom.xml install -P test -Dbearer={GOOGLE_TOKEN}"
             }
         }
