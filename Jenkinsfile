@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Install'){
             steps{
-                sh "mvn install -Ptest"
+                sh "mvn install -Papigee -Dorg=i8c-apigee-2"
             }
         }
     }
