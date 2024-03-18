@@ -18,7 +18,9 @@ pipeline {
             steps{
                 sh "mvn install -Ptest"
             }
+        }
     }
+        
     post {
         success {
             echo 'Build succeeded!'
