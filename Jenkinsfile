@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "mvn -f Mock-v1/pom.xml install -P deployUser "
+                sh "mvn -f Mock-v1/pom.xml package -P deployUser "
             }
         }
     }
