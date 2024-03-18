@@ -17,7 +17,7 @@ pipeline {
         stage('Move directory'){
             steps{
                 sh "cd Mock-v1"
-                sh "mvn -f pom.xml"
+                sh "mvn -f workspace/Deploy-Proxy/Mock-v1/pom.xml"
             }
         }
         stage('Package'){
