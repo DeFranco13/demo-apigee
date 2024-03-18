@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GOOGLE_TOKEN="azdazjhdazefdezfa8256189Bd"
+        GOOGLE_TOKEN=""
         USERNAME=""
         PASSWORD=""
     }
