@@ -15,6 +15,11 @@ pipeline {
                 sh "mvn -f Mock-v1/pom.xml package -P test "
             }
         }
+        stage('Install'){
+            steps{
+                sh "mvn -f Mock-v1/pom.xml install -P test"
+            }
+        }
     }
         
     post {
