@@ -19,7 +19,7 @@ pipeline {
                 sh "cd Mock-v1"
                 sh "ls"
                 sh "pwd"
-                sh "mvn -f Mock-v1/pom.xml install -DdeployUser -Dorg=i8c-apigee-2"
+                sh "mvn -f Mock-v1/pom.xml install -D deployUser "
             }
         }
     }
