@@ -4,13 +4,9 @@ pipeline {
         GOOGLE_TOKEN="azdazjhdazefdezfa8256189Bd"
     }
     stages {
-         stage('Clone Github') {
+         stage('Setup') {
             steps {
                 git 'https://github.com/DeFranco13/demo-apigee'
-            }
-        }
-        stage('Maven check'){
-            steps {
                 sh "mvn -v"
             }
         }
