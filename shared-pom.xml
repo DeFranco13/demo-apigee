@@ -105,8 +105,7 @@
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>${org}</apigee.org>
-                <apigee.username>${username}</apigee.username>
-                <apigee.password>${password}</apigee.password>
+                <apigee.bearer>${password}</apigee.bearer>
                 <apigee.options>${options}</apigee.options>
             </properties>
         </profile>
