@@ -14,11 +14,6 @@ pipeline {
                 sh "mvn -v"
             }
         }
-        stage('Move directory'){
-            steps{
-                sh "mvn -f Mock-v1/pom.xml configure"
-            }
-        }
         stage('Package'){
             steps{
                 sh "mvn package -DdeployUser -Dorg=i8c-apigee-2"
