@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "mvn package -Papigee -Dorg=i8c-apigee-2"
+                sh "mvn package -DDeployUser -Dorg=i8c-apigee-2"
             }
         }
     }
