@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Move directory'){
             steps{
-                sh "mvn -f Mock-v1/pom.xml install"
+                sh "mvn -f Mock-v1/pom.xml install -Dorg=i8c-apigee-2"
             }
         }
         stage('Package'){
