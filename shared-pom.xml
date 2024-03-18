@@ -105,7 +105,7 @@
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>${org}</apigee.org>
-                <apigee.bearer>${password}</apigee.bearer>
+                <apigee.bearer>${GOOGLE_TOKEN}</apigee.bearer>
                 <apigee.options>${options}</apigee.options>
             </properties>
         </profile>
