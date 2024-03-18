@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "cd Mock-v1"
+                sh "cd /Mock-v1"
                 sh "mvn package -DdeployUser -Dorg=i8c-apigee-2"
             }
         }
