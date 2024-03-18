@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Token Gen'){
              steps {
+                 sh "install npm" 
                  sh "npm install totp-generator"
                  sh "EXPORT token_gen=(node Mock-v1/mfstoken.js)"
                  sh "cat token_gen"
