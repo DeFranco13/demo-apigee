@@ -19,9 +19,9 @@ pipeline {
                 sh "cd Mock-v1"
             }
         }
-        stage('Install'){
+        stage('Package'){
             steps{
-                sh "mvn install -Papigee -Dorg=i8c-apigee-2"
+                sh "mvn package -Papigee -Dorg=i8c-apigee-2"
             }
         }
     }
