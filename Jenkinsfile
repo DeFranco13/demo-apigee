@@ -16,9 +16,6 @@ pipeline {
         }
         stage('Package'){
             steps{
-                sh "cd Mock-v1"
-                sh "ls"
-                sh "pwd"
                 sh "mvn -f Mock-v1/pom.xml install -P deployUser "
             }
         }
